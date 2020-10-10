@@ -1,0 +1,25 @@
+title: Sayan's Blog
+author:
+  name: Sayan Goswami
+  email: sayan.goswami.106@gmail.com
+description: An outlet to my various musings.
+
+show_excerpts: false # set to true to show excerpts on the homepage
+
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
+
+# Build settings
+permalink: /:title/
+
+mathjax:
+  enable: true # MathJax equations, e.g. true, false (default)
+  combo:  tex-svg # "tex-svg" (default), "tex-mml-chtml", etc.: docs.mathjax.org/en/latest/web/components/combined.html
+
+markdown: kramdown
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
