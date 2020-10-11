@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "How does the Perceptron Learning Algorithm Work?"
+title: "How does the Perceptron Learning Algorithm work?"
 ---
 
 The perceptron learning algorithm can be breifly stated as follows.
 
 For $$x_i \in \mathcal{X}$$, where $$\mathcal{X}$$ is the domain set,
-for $$y_i \in \mathcal{Y}$$, where $$\mathcal{y}$$ is the target set and
+for $$y_i \in \mathcal{Y}$$, where $$\mathcal{Y}$$ is the target set and
 for $$h \in \mathcal{H}$$, where $$\mathcal{H}$$ is the hypothesis class.
 
 1. Initialize the weight vector $$w^t$$ to a zero vector.
