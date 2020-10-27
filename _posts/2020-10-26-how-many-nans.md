@@ -34,7 +34,7 @@ The steps for the conversion from the IEEE-754 representation to the decimal sys
 Putting it all together, the decimal value of the number is obtained as
 
 $$
-(-1)^\text{\colorbox{#c3fbfd}{sign bit}} \times (1 + \colorbox{#9ffeab}{\text{fraction}}) \times 2 ^ {\colorbox{#feacac}{\text{exponent}} - \text{bias}}
+(-1)^\text{\colorbox{#c3fbfd}{sign bit}} \times (1 + \colorbox{#feacac}{\text{fraction}}) \times 2 ^ {\colorbox{#9ffeab}{\text{exponent}} - \text{bias}}
 $$
 
 For a 32-bit floating point number, the bias is 127.
@@ -46,13 +46,18 @@ Similarly, a 64-bit floating point number is represented as
 ![By Codekaizen - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=3595583](/images/float64.svg "By Codekaizen - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=3595583")
 {:refdef}
 
-Now, the representation $$r$$ and the value $$v$$ of the floating point datum are inferred from the constituent fields. If $$ E = 2^w -1 $$ and $$ T \ne 0 $$ then $$v$$ is NaN and $$r$$ is either qNaN or sNaN.
+The representation $$r$$ and the value $$v$$ of the floating point datum are inferred from the constituent fields of the floating point representation as follows.
+
+- If $$ E = 2^w -1 $$ and $$ T \ne 0 $$ then $$v$$ is NaN and $$r$$ is either qNaN or sNaN.
+- If $$ E = 2^w -1 $$ and $$ T = 0 $$ then $$r =  v = (-1)^S \times \infty$$.
+- Signed floating point numbers are represented by all other $$ E \in [0, 2^w - 2] $$.
+- Note that zeros can be signed!
 
 ### Types of NaN
 
 IEEE-754 defines two types of NaN, quiet NaN (qNaN) and signalling NaN (sNaN).
 
-Quiet NaNs on the other hand are implementation specific and can offer diagnostic information from the underlying data for a particular implementation.
+Quiet NaNs are implementation specific and can offer diagnostic information from the underlying data for a particular implementation.
 The first bit of the trailing significand ($$d_1$$) is set to $$1$$ for a quiet NaN.
 
 Signalling NaNs are reserved operands that are used to signal the invalid operation exception.
@@ -61,19 +66,19 @@ Of the remaining $$t-1$$ bits, at least 1 should be non-zero to distinguish the 
 
 ### How many NaNs are there
 
-We know that for a number to be NaN, it must have its exponent, $$ E = 2^w -1 $$ and $$ T \ne 0 $$.
+We know that for a number to be NaN, it must have its exponent $$E$$ set to $$ 2^w -1 $$ and $$ T \ne 0 $$.
 So, for a $$k$$-bit representation, we have
 
-$$ \text{\# of NaNs} = 2 ^ {k - w} - 1 $$
+$$ \text{Total number of NaNs} = 2 ^ {k - w} - 2 $$
 
-$$ \text{\# of quiet NaNs} = 2 ^ {k - (w + 1)} - 1 $$
+$$ \text{Number of quiet NaNs} = 2 ^ {k - (w + 1)} $$
 
-$$ \text{\# of signalling NaNs} = 2 ^ {k - w} - 2 ^ {k - (w + 1)} $$
+$$ \text{Number of signalling NaNs} = 2 ^ {k - w} - 2 ^ {k - (w + 1)} - 2 $$
 
-The trend is as follows
+The trend of the fraction of NaNs as compared to number of valid floating point representations is as follows
 
 {:refdef: style="text-align: center;"}
 ![](/images/nanpercent.svg)
 {:refdef}
 
-**Note**: TBC.
+**Note**: *The y-axis of the graph uses log scale.*
