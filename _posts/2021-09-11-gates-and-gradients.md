@@ -7,4 +7,6 @@ This is a draft of my notes as I delve into Quantum Machine Learning.
 
 # [Pennylane](https://pennylane.ai)
 
-**shots** define the number of times a circuit will be evaluated to compute expectation values.
+## Shots
+
+**Shots** define the number of times a circuit will be evaluated to compute expectation values.
