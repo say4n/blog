@@ -6,7 +6,7 @@ title: "Metal for Compute"
 **Note**: This blog post is a Work in Progress.
 
 This blog post describes how to use Apple's Metal API for computation on a GPU in a C++ project.
-The accompanying the repository is [say4n/metal.compute](https://github.com/say4n/metal.compute).
+The accompanying repository is [say4n/metal.compute](https://github.com/say4n/metal.compute).
 Be sure to check it out!
 
 ## before we get started
