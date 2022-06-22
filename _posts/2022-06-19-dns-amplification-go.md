@@ -8,6 +8,8 @@ attacker leverages open DNS servers to overwhelm a target with a huge influx of 
 This influx of spurious traffic renders the victim inaccessible to legitimate traffic thereby accomplishing the denial
 of service.
 
+![DNS amplification attack](/images/dns-amplification.png)
+
 ## Table of Contents
 {:.no_toc}
 
