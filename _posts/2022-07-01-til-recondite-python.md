@@ -21,7 +21,7 @@ It is set to `True` whenever you run a REPL shell or call a script with the
 
 It is set to `False` only when you pass the `-O` or the `-OO` flags to the python executable.
 
-These flags are described in the manpage as:
+These flags are described in the Python manual page as:
 
 `-O` Remove assert statements and any code conditional on the value of __debug__;
 augment the filename for compiled (bytecode) files by adding .opt-1 before the .pyc
