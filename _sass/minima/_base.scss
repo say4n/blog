@@ -5,22 +5,9 @@ html {
 /**
  * Reset some basic elements
  */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-hr,
-dl,
-dd,
-ol,
-ul,
-figure {
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
   margin: 0;
   padding: 0;
 
@@ -37,9 +24,9 @@ body {
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
-    -o-font-feature-settings: "kern" 1;
-    font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
@@ -52,21 +39,11 @@ body {
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-ul,
-ol,
-dl,
-figure,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: calc($spacing-unit / 2);
+  margin-bottom: $spacing-unit * .5;
 }
 
 hr {
@@ -78,8 +55,7 @@ hr {
  * `main` element
  */
 main {
-  display: block;
-    /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
 
 
@@ -97,7 +73,7 @@ img {
 /**
  * Figures
  */
-figure>img {
+figure > img {
   display: block;
 }
 
@@ -110,14 +86,13 @@ figcaption {
 /**
  * Lists
  */
-ul,
-ol {
+ul, ol {
   margin-left: $spacing-unit;
 }
 
 li {
->ul,
-  >ol {
+  > ul,
+  > ol {
     margin-bottom: 0;
   }
 }
@@ -127,12 +102,7 @@ li {
 /**
  * Headings
  */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
 
@@ -151,6 +121,7 @@ a {
 
   &:hover {
     color: $link-hover-color;
+    text-decoration: underline;
   }
 
   .social-media-list &:hover {
@@ -169,7 +140,7 @@ a {
 blockquote {
   color: $brand-color;
   border-left: 4px solid $border-color-01;
-  padding-left: calc($spacing-unit / 2);
+  padding-left: $spacing-unit * .5;
   @include relative-font-size(1.125);
   font-style: italic;
 
@@ -177,8 +148,7 @@ blockquote {
     margin-bottom: 0;
   }
 
-    i,
-    em {
+  i, em {
     font-style: normal;
   }
 }
@@ -205,7 +175,7 @@ pre {
   padding: 8px 12px;
   overflow-x: auto;
 
-  >code {
+  > code {
     border: 0;
     padding-right: 0;
     padding-left: 0;
@@ -231,8 +201,8 @@ pre {
   max-width: calc(#{$content-width} - (#{$spacing-unit}));
   margin-right: auto;
   margin-left: auto;
-    padding-right: calc($spacing-unit / 2);
-    padding-left: calc($spacing-unit / 2);
+  padding-right: $spacing-unit * .5;
+  padding-left: $spacing-unit * .5;
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {
@@ -268,11 +238,10 @@ pre {
 }
 
 .svg-icon {
-  width: 16px;
-  height: 16px;
+  width: 1.25em;
+  height: 1.25em;
   display: inline-block;
   fill: currentColor;
-  padding: 5px 3px 2px 5px;
   vertical-align: text-bottom;
 }
 
@@ -287,22 +256,18 @@ table {
   color: $table-text-color;
   border-collapse: collapse;
   border: 1px solid $table-border-color;
-
   tr {
     &:nth-child(even) {
       background-color: $table-zebra-color;
     }
   }
-th,
-td {
-  padding: calc($spacing-unit / 3) calc($spacing-unit / 2);
+  th, td {
+    padding: ($spacing-unit * 33.3333333333 * .01) ($spacing-unit * .5);
   }
-
   th {
     background-color: $table-header-bg-color;
     border: 1px solid $table-header-border;
   }
-
   td {
     border: 1px solid $table-border-color;
   }
@@ -311,6 +276,6 @@ td {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
