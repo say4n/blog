@@ -229,7 +229,8 @@
 
 .post-link {
   display: block;
-  @include relative-font-size(1.5);
+  font-weight: 500;
+  @include relative-font-size(1.75);
 }
 
 
@@ -246,6 +247,7 @@
   @include relative-font-size(2.625);
   letter-spacing: -1px;
   line-height: 1.15;
+  font-weight: 500;
 
   @media screen and (min-width: $on-large) {
     @include relative-font-size(2.625);

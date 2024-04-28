@@ -220,9 +220,13 @@ $text-color: $lm-text-color;
 $background-color: $lm-background-color;
 $code-background-color: $lm-code-background-color;
 
-$link-base-color: $lm-link-base-color;
-$link-visited-color: $lm-link-visited-color;
-$link-hover-color: $lm-link-hover-color;
+$link-base-color: $brand-color-dark !default;
+$link-visited-color: lighten($link-base-color, 15%) !default;
+$link-hover-color: $link-base-color !default;
+
+// $link-base-color: $lm-link-base-color;
+// $link-visited-color: $lm-link-visited-color;
+// $link-hover-color: $lm-link-hover-color;
 
 $border-color-01: $lm-border-color-01;
 $border-color-02: $lm-border-color-02;
