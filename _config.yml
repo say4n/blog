@@ -9,9 +9,9 @@ show_excerpts: false # set to true to show excerpts on the homepage
 
 google_analytics: G-50DY9D502Q
 
+theme: minima
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-theme: minima
 minima:
   date_format: "%b %-d, %Y"
 
