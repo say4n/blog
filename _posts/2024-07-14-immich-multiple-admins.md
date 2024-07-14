@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to setup multiple admin accounts on Immich.
+title: How to setup multiple admin accounts on Immich
 ---
 
 This guide assumes you're running Immich using the [recommended](https://immich.app/docs/install/docker-compose) installation method.
